@@ -10,8 +10,8 @@ const QuickLinks = [
   { name: "About Us", path: "/#about-us", isExternal: false },
   { name: "FAQs", path: "/#faqs", isExternal: false },
   { name: "Contact Us", path: "/#contact-us", isExternal: false },
-  { name: "Privacy Policy", path: "/privacy-policy", isExternal: true },
-  { name: "Terms & Conditions", path: "/terms-conditions", isExternal: true },
+  { name: "Privacy Policy", path: "/#privacy-policy", isExternal: false },
+  { name: "Terms & Conditions", path: "/#terms-conditions", isExternal: false },
 ];
 
 const Footer = () => {
