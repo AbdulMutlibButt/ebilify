@@ -3,10 +3,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Check, Zap, Crown, Rocket, Clock, FileText } from "lucide-react";
-import Link from "next/link";
+import { createCheckoutSession } from "../app/actions";
 
 const pricingPlans = [
   {
+    id: "starter",
     name: "Starter Package",
     price: "$199",
     description: "Perfect for authors who have their manuscript ready.",
@@ -19,10 +20,11 @@ const pricingPlans = [
     delivery: "7–10 business days",
     format: "PDF + DOCX",
     payment: "100% upfront",
-    cta: "Get Started",
+    cta: "Pay Now",
     popular: false,
   },
   {
+    id: "business",
     name: "Business Package",
     price: "$699",
     description: "Our most popular choice for professional entrepreneurs.",
@@ -36,10 +38,11 @@ const pricingPlans = [
     delivery: "14–21 business days",
     format: "DOCX + Print Ready PDF",
     payment: "50% upfront / 50% post-draft",
-    cta: "Best Value",
+    cta: "Pay Now",
     popular: true,
   },
   {
+    id: "premium",
     name: "Premium Authority",
     price: "$1,499",
     description: "End-to-end solution for high-impact authority books.",
@@ -53,7 +56,7 @@ const pricingPlans = [
     delivery: "21–30 business days",
     format: "DOCX + PDF",
     payment: "50% / 25% / 25% Milestones",
-    cta: "Go Premium",
+    cta: "Pay Now",
     popular: false,
   },
 ];
@@ -132,15 +135,19 @@ const PricingSection = () => {
                 </div>
               </div>
 
-              <button
-                className={`w-full py-3.5 rounded-xl font-bold transition-all duration-300 active:scale-95 ${
-                  plan.popular
-                    ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg"
-                    : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white"
-                }`}
-              >
-                <Link href={"/#contact-us"}>{plan.cta}</Link>
-              </button>
+              <form action={createCheckoutSession} className="w-full">
+                <input type="hidden" name="planId" value={plan.id} />
+                <button
+                  type="submit"
+                  className={`w-full py-3.5 rounded-xl font-bold transition-all duration-300 active:scale-95 ${
+                    plan.popular
+                      ? "bg-indigo-600 hover:bg-indigo-700 text-white shadow-lg"
+                      : "bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white"
+                  }`}
+                >
+                  {plan.cta}
+                </button>
+              </form>
             </motion.div>
           ))}
         </div>

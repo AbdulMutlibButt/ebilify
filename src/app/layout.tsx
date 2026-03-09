@@ -21,6 +21,15 @@ export const metadata: Metadata = {
   title: "Ebilify - Modern Solutions",
   description:
     "Ebilify provides cutting-edge digital solutions for your business.",
+  icons: {
+    icon: [
+      {
+        url: "/icon.jpg",
+        type: "image/jpg",
+      },
+    ],
+    apple: "/icon.jpg",
+  },
 };
 
 export default function RootLayout({

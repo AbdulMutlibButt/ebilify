@@ -109,3 +109,53 @@ export async function sendEmail(prevState: any, formData: FormData) {
     };
   }
 }
+
+import Stripe from "stripe";
+import { redirect } from "next/navigation";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "");
+
+type StripePlanId = "starter" | "business" | "premium";
+
+const stripePlans: Record<StripePlanId, { name: string; amountCents: number }> = {
+  starter: { name: "Starter Package", amountCents: 19900 },
+  business: { name: "Business Package", amountCents: 69900 },
+  premium: { name: "Premium Authority", amountCents: 149900 },
+};
+
+export async function createCheckoutSession(formData: FormData) {
+  const planId = formData.get("planId") as StripePlanId | null;
+
+  if (!planId || !stripePlans[planId]) {
+    throw new Error("Invalid pricing plan selected.");
+  }
+
+  const plan = stripePlans[planId];
+
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL ?? "http://localhost:3000";
+
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ["card"],
+    mode: "payment",
+    line_items: [
+      {
+        price_data: {
+          currency: "usd",
+          product_data: {
+            name: plan.name,
+          },
+          unit_amount: plan.amountCents,
+        },
+        quantity: 1,
+      },
+    ],
+    success_url: `${baseUrl}/checkout/success?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${baseUrl}/checkout/canceled`,
+  });
+
+  if (!session.url) {
+    throw new Error("Failed to create Stripe checkout session.");
+  }
+
+  redirect(session.url);
+}

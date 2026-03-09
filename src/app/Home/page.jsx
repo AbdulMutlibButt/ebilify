@@ -11,6 +11,7 @@ const ContactForm = lazy(() => import("@/src/sections/ContactForm"));
 import { Search, PenTool, CheckCircle, Layout, Send, RefreshCw } from "lucide-react";
 const PricingSection = lazy(() => import("@/src/components/PriceSection"));
 const RefundPolicy = lazy(() => import("@/src/components/RefundPolicy"));
+const PaymentStatusBanner = lazy(() => import("@/src/components/PaymentStatusBanner"));
 
 
 const processes = [
@@ -70,6 +71,7 @@ const HomeScreen = () => {
   return (
     <>
       <Suspense fallback={<LoadingFallback />}>
+        <PaymentStatusBanner />
         <HomeHero />
         <Brandcarousal />
         <section id="about-us">
