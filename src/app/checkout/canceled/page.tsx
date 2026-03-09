@@ -1,15 +1,7 @@
+"use client";
+
 import Link from "next/link";
 import { motion } from "framer-motion";
-
-export const metadata = {
-  title: "Payment Canceled | Ebilify",
-  description: "Your checkout was canceled. No payment was processed. Feel free to try again whenever you're ready.",
-  openGraph: {
-    title: "Payment Canceled | Ebilify",
-    description: "Your checkout was canceled. No payment was processed.",
-    type: "website",
-  },
-};
 
 export default function CheckoutCanceledPage() {
   return (
