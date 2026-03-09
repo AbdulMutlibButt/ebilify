@@ -86,7 +86,7 @@ const HomeScreen = () => {
         <section>
           <PricingSection />
         </section>
-        <section>
+        <section id="privacy-policy">
           <RefundPolicy/>
         </section>
         <section id="contact-us">

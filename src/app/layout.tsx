@@ -6,6 +6,7 @@ import { Navbar } from "../components/Navbar";
 import Footer from "../components/Footer";
 import StickyActions from "../components/StickyActions";
 import { Toaster } from "sonner";
+import { StructuredData } from "../components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,9 +19,22 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ebilify - Modern Solutions",
+  title: "Ebilify | Professional Digital Solutions & Writing Services",
   description:
-    "Ebilify provides cutting-edge digital solutions for your business.",
+    "Ebilify provides professional digital solutions, content writing, and brand development services to elevate your business. High-quality SEO-optimized content & strategic consulting.",
+  keywords: [
+    "digital solutions",
+    "writing services",
+    "content creation",
+    "brand development",
+    "digital marketing",
+    "professional services",
+  ],
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+  },
   icons: {
     icon: [
       {
@@ -30,6 +44,43 @@ export const metadata: Metadata = {
     ],
     apple: "/icon.jpg",
   },
+  openGraph: {
+    title: "Ebilify | Professional Digital Solutions & Writing Services",
+    description:
+      "Professional digital solutions, content writing, and brand development services to elevate your business.",
+    url: "https://ebilify.com",
+    siteName: "Ebilify",
+    type: "website",
+    locale: "en_US",
+    images: [
+      {
+        url: "/icon.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Ebilify - Professional Digital Solutions",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ebilify | Professional Digital Solutions & Writing Services",
+    description:
+      "Professional digital solutions, content writing, and brand development services.",
+    images: ["/icon.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://ebilify.com",
+  },
+  metadataBase: new URL("https://ebilify.com"),
 };
 
 export default function RootLayout({
@@ -39,6 +90,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <StructuredData />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

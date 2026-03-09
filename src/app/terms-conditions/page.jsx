@@ -2,6 +2,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import LampDemo from "@/src/components/ui/lamp";
 
 const TermsAndConditions = () => {
@@ -11,6 +13,21 @@ const TermsAndConditions = () => {
       <div className="h-[60vh] overflow-hidden">
         <LampDemo text="Terms & Conditions" />
       </div>
+      {/* Navigation to Refund Policy */}
+      <section className="py-12 px-6 bg-slate-50 dark:bg-slate-900/50">
+        <div className="container mx-auto max-w-5xl text-center">
+          <p className="text-slate-600 dark:text-slate-400 mb-6">
+            Want to learn about our refund policy?
+          </p>
+          <Link
+            href="/#terms-conditions"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors"
+          >
+            View Refund Policy
+            <ArrowRight className="w-5 h-5" />
+          </Link>
+        </div>
+      </section>
       {/* Content Section */}
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-5xl bg-white dark:bg-slate-900 p-8 md:p-12 rounded-3xl shadow-xl shadow-indigo-500/5 border border-slate-100 dark:border-slate-800">

@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /checkout/
+
+# Sitemaps
+Sitemap: https://ebilify.com/sitemap.xml
+
+# Crawl delay (in seconds)
+Crawl-delay: 1

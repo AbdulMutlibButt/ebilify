@@ -24,7 +24,7 @@ const refundPoints = [
 
 const RefundPolicy = () => {
   return (
-    <section className="py-24 bg-white dark:bg-slate-950 transition-colors duration-500 relative">
+    <section id="terms-conditions" className="py-24 bg-white dark:bg-slate-950 transition-colors duration-500 relative">
       <div className="container mx-auto px-6 relative z-10">
         
         {/* Top Centered Heading */}
