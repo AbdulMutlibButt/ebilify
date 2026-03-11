@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTheme } from "next-themes";
 import {
   Plane,
   Users,
@@ -74,6 +75,15 @@ const niches = [
 
 const NicheCard = ({ title, icon: Icon, color, bg, index }) => {
   const [hovered, setHovered] = useState(false);
+  const { theme, systemTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isDark = mounted && (theme === "dark" || (theme === "system" && systemTheme === "dark"));
+  const textColor = isDark ? "#fff" : (hovered ? "#fff" : "#334155");
 
   return (
     <motion.div
@@ -133,8 +143,8 @@ const NicheCard = ({ title, icon: Icon, color, bg, index }) => {
 
         {/* Title */}
         <h3
-          className="font-bold text-center text-xs md:text-sm uppercase tracking-wide leading-snug transition-colors duration-300 dark:text-slate-200"
-          style={{ color: hovered ? "#fff" : "#334155" }}
+          className="font-bold text-center text-xs md:text-sm uppercase tracking-wide leading-snug transition-colors duration-300"
+          style={{ color: textColor }}
         >
           {title}
         </h3>
