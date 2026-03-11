@@ -118,9 +118,9 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY ?? "");
 type StripePlanId = "starter" | "business" | "premium";
 
 const stripePlans: Record<StripePlanId, { name: string; amountCents: number }> = {
-  starter: { name: "Starter Package", amountCents: 19900 },
-  business: { name: "Business Package", amountCents: 69900 },
-  premium: { name: "Premium Authority", amountCents: 149900 },
+  starter: { name: "Starter Package", amountCents: 59900 },
+  business: { name: "Business Package", amountCents: 249900 },
+  premium: { name: "Premium Authority", amountCents: 449900 },
 };
 
 export async function createCheckoutSession(formData: FormData) {

@@ -18,7 +18,7 @@ export function StructuredData() {
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'Customer Service',
-      email: 'support@ebilify.com',
+      email: 'info@ebilify.com',
     },
   };
 

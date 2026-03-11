@@ -35,7 +35,7 @@ const CONFETTI_COLORS = ["#22c55e", "#166534", "#4ade80"];
 
 export default function CheckoutSuccessClient({ sessionInfo }: CheckoutSuccessClientProps) {
   const router = useRouter();
-
+  
   useEffect(() => {
     // Confetti animation
     const endTime = Date.now() + CONFETTI_DURATION_MS;
@@ -66,7 +66,6 @@ export default function CheckoutSuccessClient({ sessionInfo }: CheckoutSuccessCl
 
     animateConfetti();
   }, []);
-
   return (
     <main className="min-h-screen flex items-center justify-center px-6 py-16 bg-slate-50 dark:bg-slate-950">
       <motion.div

@@ -9,7 +9,7 @@ const pricingPlans = [
   {
     id: "starter",
     name: "Starter Package",
-    price: "$199",
+    price: "$599",
     description: "Perfect for authors who have their manuscript ready.",
     icon: <Zap className="w-6 h-6 text-indigo-500" />,
     features: [
@@ -26,7 +26,7 @@ const pricingPlans = [
   {
     id: "business",
     name: "Business Package",
-    price: "$699",
+    price: "$2,499",
     description: "Our most popular choice for professional entrepreneurs.",
     icon: <Rocket className="w-6 h-6 text-indigo-600 dark:text-cyan-400" />,
     features: [
@@ -44,7 +44,7 @@ const pricingPlans = [
   {
     id: "premium",
     name: "Premium Authority",
-    price: "$1,499",
+    price: "$4,499",
     description: "End-to-end solution for high-impact authority books.",
     icon: <Crown className="w-6 h-6 text-amber-500" />,
     features: [
