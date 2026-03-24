@@ -19,6 +19,8 @@ export function Navbar() {
     { href: "#services", label: "Services" },
     { href: "#about-us", label: "About" },
     { href: "#contact-us", label: "Contact Us" },
+    { href: "#terms-and-conditions", label: "Terms and Conditions" },
+    { href: "#privacy-policy", label: "Privacy Policy" },
   ];
 
   const containerVariants = {

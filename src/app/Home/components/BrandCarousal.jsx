@@ -46,7 +46,7 @@ const LogoCarousel = () => {
               <Image
                 src={src}
                 alt={`Logo ${index}`}
-                className="object-contain max-h-full"
+                className="object-contain max-h-full w-full"
                 width={150}
                 height={150}
                 loading="lazy"

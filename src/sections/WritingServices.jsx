@@ -75,14 +75,9 @@ const niches = [
 
 const NicheCard = ({ title, icon: Icon, color, bg, index }) => {
   const [hovered, setHovered] = useState(false);
-  const { theme, systemTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { theme } = useTheme();
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  const isDark = mounted && (theme === "dark" || (theme === "system" && systemTheme === "dark"));
+  const isDark = theme === "dark";
   const textColor = isDark ? "#fff" : (hovered ? "#fff" : "#334155");
 
   return (
