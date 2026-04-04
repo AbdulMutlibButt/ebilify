@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowUp, Instagram, Linkedin } from "lucide-react";
+import { ArrowUp, Facebook, Instagram, Linkedin } from "lucide-react";
 
 const StickyActions = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -40,6 +40,12 @@ const StickyActions = () => {
       name: "LinkedIn",
       icon: <Linkedin className="w-6 h-6" />,
       href: "https://linkedin.com/company/ebilify",
+      color: "bg-[#0077b5]",
+    },
+    {
+      name: "Facebook",
+      icon: <Facebook className="w-6 h-6" />,
+      href: "https://www.facebook.com/profile.php?id=61588658134156",
       color: "bg-[#0077b5]",
     },
   ];

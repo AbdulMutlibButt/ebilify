@@ -142,7 +142,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-slate-800 text-center">
           <p className="text-white text-sm">
-            © {new Date().getFullYear()} Ebilify LLC. All rights reserved.
+            © 2025 Ebilify LLC. All rights reserved.
           </p>
         </div>
       </div>
