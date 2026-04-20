@@ -34,6 +34,9 @@ export default function HomeHero() {
         support services for authors and entrepreneurs. All projects are
         delivered under written agreement with defined timelines and milestones.
       </p>
+      <p className="text-sm md:text-lg mt-4  text-black dark:text-white font-normal inter-var text-center">
+        Impact-Site-Verification: e9053298-0331-451f-a3bd-01f7c053a29c
+      </p>
 
       <motion.div
         initial="hidden"
@@ -46,11 +49,13 @@ export default function HomeHero() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           className="px-12 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-shadow"
-         
-       >
-        <Link href={"/#contact-us"} className="flex gap-4 justify-center items-center">
-          Get Started <ArrowRight size={20} />
-        </Link>
+        >
+          <Link
+            href={"/#contact-us"}
+            className="flex gap-4 justify-center items-center"
+          >
+            Get Started <ArrowRight size={20} />
+          </Link>
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.05 }}
